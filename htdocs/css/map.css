@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+html,body,form { width: 100%; height: 100%; margin: 0px; padding: 0px; }
+#info { float: left; width: 250px; height: 100%; margin: 4px; overflow: auto; }
+#info input { width: 172px; }
+#map { height: 100%; }
+.schedule {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  margin-top: -1px;
+  padding: 4px;
+}
+.event { margin-bottom: 10px; }
