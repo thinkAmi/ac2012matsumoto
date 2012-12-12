@@ -1,0 +1,5 @@
+cron:
+- description: web check
+  url: /cron/gather
+  schedule: every day 02:00
+  timezone: Asia/Tokyo

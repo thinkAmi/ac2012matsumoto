@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <!-- CSSファイルの代わりに、jQueryのcssを使って、画面の装飾を行う -->
+  <script type="text/JavaScript">// <![CDATA[
+    window.onload = function(){
+      $("html, body, form").css({
+        width: "100%",
+        height: "100%",
+        margin: "0px",
+        padding: "0px"
+        });
+
+      $("div#info").css({
+        float: "left",
+        width: "250px",
+        height: "100%",
+        margin: "4px",
+        overflow: "auto"
+      });
+
+      $(".schedule").css({
+        borderTop: "1px solid #cccccc",
+        borderBottom: "1px solid #cccccc",
+        marginTop: "-1px",
+        padding: "4px"
+      });
+
+
+      $("div#info.input").css("width","172px");
+
+      $("div#map").css("height", "100%");
+
+
+      $(".event").css("marginBottom", "10px");
+    }
+    //]]</script>
+
+
+<title>アルクマップ - GAS版</title>
+
+</head>
+<body>
+    <div id="info">
+        <h3>アルクマスケジュール</h3>
+        <div id="schedule">
+
+
+            <!-- GASのメソッドを呼び出して、戻り値をもとにHTMLを組み立てる -->
+            <?
+               var events = getEvents();
+               for(var i = 0; i < events.length; i++){
+                   var day = events[i].day;
+                   var strDay = day.getFullYear() + "/" + (day.getMonth() + 1) + "/" + day.getDate();
+
+                   output.append('<div class="event">');
+                   output.append('<div class="day">' + strDay + '</div>');
+                   output.append('<div class="title">' + events[i].title + '</div>');
+                   output.append('<div class="place">' + events[i].place + '</div>');
+                   output.append('</div>');
+               }
+
+            ?>
+        </div>
+    </div>
+    <div id="map">
+
+      <!-- GASで取得したGoogle StaticMapを表示する -->
+      <img src="<?= getMap(); ?>" alt="map">
+
+    </div>
+</body>
+</html>
