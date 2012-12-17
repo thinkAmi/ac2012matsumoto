@@ -2,8 +2,9 @@ ac2012matsumoto
 ========
 [Advent Calendar in 信州松本（だけじゃなくてもいいよ）](http://atnd.org/event/E0010864) で作成したWebアプリのソースコードです。
 
-* アルクマップ - 今月アルクマはどこにいるかな
-* アルクマップ - GAS版
+* [アルクマップ - 今月アルクマはどこにいるかな](http://d.hatena.ne.jp/thinkAmi/20121209/1355003567)
+* [アルクマップ - GAS版](http://d.hatena.ne.jp/thinkAmi/20121213/1355347124)
+* [アルクマップ - Googleドライブ版](http://d.hatena.ne.jp/thinkAmi/20121218/1355779644)
 
 開発環境
 ----------
@@ -24,6 +25,14 @@ ac2012matsumoto
 
 1.  app.yaml中のapplicationの「＜your application id＞」を自分が作成するApplicationIDへと変更します。
 2.  Launcherにて、File > Add Existing Application よりリポジトリを指定します。
+3.  api.yamlに各種APIのキー設定がありますので、自分の環境に合わせた設定を行います。設定項目は以下の通りです。
+
+* instance: Google CloudSQLのインスタンス名を指定
+* client_id: Goole APIConsoleに表示されている、client_id
+* client_secret: Goole APIConsoleに表示されている、client_secret
+* folder_id: 18日目で外部公開するフォルダのID
+* calendar_id: アルクマのスケジュールを保存するためのGoogleカレンダーのID  
+
 
 ### GoogleAppsScript側
 gsファイルをGoogleドライブへアップロードしても認識されないため、以下の方法で作業を行います。
@@ -46,7 +55,7 @@ gsファイルをGoogleドライブへアップロードしても認識されな
 
 
 ####13日目用のGoogleAppsScript側の作り方
-該当するのは、gsファイルとhtmlファイル、それぞれ１つずつとなります。
+該当するのは、gsファイルとhtmlファイル、それぞれ一つずつとなります。
 
 * RenderArukuma.gs
 * index.html

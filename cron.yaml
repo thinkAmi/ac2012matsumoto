@@ -3,3 +3,8 @@ cron:
   url: /cron/gather
   schedule: every day 02:00
   timezone: Asia/Tokyo
+
+- description: create google drive file
+  url: /cron/googledrive
+  schedule: every day 03:00
+  timezone: Asia/Tokyo

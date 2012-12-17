@@ -1,1 +1,14 @@
-instance: '<your CloudSQL instance name>'
+# Google CloudSQL
+instance: ''
+
+# Google API Key
+client_id: ''
+client_secret: ''
+
+# Google Drive
+folder_id: ''
+
+# Google Calendar
+calendar_id: ''
+
+

@@ -5,9 +5,25 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /cron/gather
+  script: gather.app
+  login: admin
+
+- url: /oauth2callback
+  script: googledrivehandler.app
+  login: admin
+
+- url: /cron/googledrive.*
+  script: googledrivehandler.app
+  login: admin
+
 - url: /
   static_files: htdocs/index.html
   upload: /
 
 - url: /
   static_dir: htdocs
+
+libraries:
+- name: lxml
+  version: latest
